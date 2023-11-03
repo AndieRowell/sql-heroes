@@ -33,18 +33,18 @@ add_batman()
 #add a function to be able to "look up" and display a character
 #need some way to enter the name and match it to what's in the database?
     #maybe a variable to put into the parameters?
-def look_up_char():
-    superhero_name = input("Who would you like to look up? Type Name Here: ")
-        query = """
-                SELECT *
-                FROM heroes
-                WHERE name = (%s)
-                """
-        execute_select(query, (superhero_name))
-            print("Supehero Stats:")
-            print("Name:", )
-            print("Abilities",)
-#should add and if else here ---
+# def look_up_char():
+#     superhero_name = input("Who would you like to look up? Type Name Here: ")
+#         query = """
+#                 SELECT *
+#                 FROM heroes
+#                 WHERE name = (%s)
+#                 """
+#         execute_select(query, (superhero_name))
+#             print("Supehero Stats:")
+#             print("Name:", )
+#             print("Abilities",)
+# #should add and if else here ---
 
 #add a function to add a character
 
@@ -64,3 +64,13 @@ def edit_hero_name():
 edit_hero_name()
 
 #add a function to delete
+def delete_hero()
+    delete_hero_input = input('Who would you like to wipe from existence?: ')
+    query = """
+            DELETE FROM heroes
+            WHERE name = (%s)
+            """
+    execute_modify(query, (delete_hero_input))
+    print(delete_hero_input, " has been eliminated.")
+
+delete_hero()
